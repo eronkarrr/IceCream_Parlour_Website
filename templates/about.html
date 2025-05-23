@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock title %}
+
+{% block body %}
+
+<style>
+  body {
+    background-color: #f5f5f5; /* light grey, you can change it */
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255, 255, 255, 0.459)),url('/static/softy2.jpg'); /* optional image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+
+<div class="px-4 pt-3 my-0 text-center">
+    <div class="col-lg-8 mx-auto text-center">
+  <h1 class="display-4 fw-bold text-danger">Bangar's Ice Cream Parlour</h1>
+  <h2 class="text-warning mb-4">Serving Sweet Smiles Since 2001</h2>
+
+  <p class="lead my-4">
+    Enjoy handcrafted flavors and frozen treats made with love and tradition.
+    Visit us at <strong>Shop No. 07, Manchar, Tal-Ambegaon, Dist. Pune – 410503</strong> or get in touch!
+  </p>
+
+  <p class="text-dark">
+    📧 <strong>Email:</strong> bangarsicecream@gmail.com<br>
+    📞 <strong>Call:</strong> 9119497083<br>
+    🌐 <strong>Website:</strong> www.bangarsicecream.com<br>
+    💬 <em>"Scooping Happiness, One Cone at a Time!"</em>
+  </p>
+
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
+    <a href="{% url 'Contact' %}" class="btn btn-primary btn-lg px-4 me-sm-3">Contact Us</a>
+  </div>
+
+  <div class="overflow-hidden" style="max-height: 40vh;">
+    <div class="container">
+      <img src="/static/Screenshot.jpg" class="img-fluid border rounded-3 shadow-lg mb-0"
+           alt="Ice Cream Display" width="700" height="700" loading="lazy">
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services{% endblock title %}
+
+{% block body %}
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="100" tabindex="0">
+
+<div class="container py-5">
+
+  <!-- Cup Ice Cream Section -->
+  <div id="cup" class="mb-5">
+    <h2 class="text-danger mb-4">Cup Ice-Cream</h2>
+    <div class="row g-4">
+      {% for i in "123456" %}
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/static/cup{{ i }}.jpg" class="card-img-top" alt="Cup {{ i }}">
+          <div class="card-body">
+            <h5 class="card-title">Cup Delight {{ i }}</h5>
+            <p><strong>Price:</strong> ₹40</p>
+            <p><strong>Quantity:</strong> 100ml</p>
+            <a href="" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Softy Section -->
+  <div id="softy" class="mb-5">
+    <h2 class="text-success mb-4">Softy</h2>
+    <div class="row g-4">
+      {% for i in "123456" %}
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/static/softy{{ i }}.jpg" class="card-img-top" alt="Softy {{ i }}">
+          <div class="card-body">
+            <h5 class="card-title">Softy Magic {{ i }}</h5>
+            <p><strong>Price:</strong> ₹50</p>
+            <p><strong>Quantity:</strong> 120ml</p>
+            <a href="" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Family Pack Section -->
+  <div id="family">
+    <h2 class="text-primary mb-4">Family Pack</h2>
+    <div class="row g-4">
+      {% for i in "123456" %}
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="/static/family{{ i }}.jpg" class="card-img-top" alt="Family Pack {{ i }}">
+          <div class="card-body">
+            <h5 class="card-title">Family Fun {{ i }}</h5>
+            <p><strong>Price:</strong> ₹150</p>
+            <p><strong>Quantity:</strong> 500ml</p>
+            <a href="" class="btn btn-primary btn-sm">Order Now</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+</body>
+{% endblock body %}

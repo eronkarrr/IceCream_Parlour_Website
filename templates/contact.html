@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid px-0">
+    <img src="/static/contact.jpg" height="350" class="d-block w-100" alt="...">
+    <h1 class="text-center my-4">Contact Us</h1>
+
+    <div class="container my-5">
+      {% if messages %}
+    <div class="container my-3">
+      {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="form-group mb-3">
+      <label for="name" class="form-label fw-bold">Full Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="email" class="form-label fw-bold">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="phone" class="form-label fw-bold">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="desc" class="form-label fw-bold">How can we help you?</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</div>
+
+{% endblock body %}
