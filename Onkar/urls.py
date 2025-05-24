@@ -16,6 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from Home.api_views import ContactViewSet
+
+router = DefaultRouter()
+router.register(r'Contacts', ContactViewSet)
 
 admin.site.site_header = "Bangar's Ice-Cream Admin"
 admin.site.site_title = "Bangar's Ice-Cream Admin Portal"
@@ -23,5 +28,6 @@ admin.site.index_title = "Welcome to Bangar's Ice-Cream Researcher Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
     path('',include('Home.urls')),
 ]
